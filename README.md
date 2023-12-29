@@ -51,6 +51,11 @@ content: ["./src/**/*.{html,js,jsx,ts,tsx}","./index.html"]
 @tailwind components;
 @tailwind utilities;
 ``````
+5. Add the following plugins into the tailwind config file
+``````
+....
+plugins:[require("daisyui"),require("@tailwindcss/line-clamp")]
+``````
 
 ### Added Plugins and dependencies
 
