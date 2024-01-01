@@ -1,12 +1,11 @@
 import aboutMainImage from '../assets/Images/aboutMainImage.png'
-import apj from '../assets/Images/QuotesPersonalityImage/apj.png'
-import billGates from '../assets/Images/QuotesPersonalityImage/billGates.png'
-import einstein from '../assets/Images/QuotesPersonalityImage/einstein.png'
-import nelsonmandela from '../assets/Images/QuotesPersonalityImage/nelsonmandela.png'
-import steveJobs from '../assets/Images/QuotesPersonalityImage/steveJobs.png'
+import CarouselSlide from '../Components/CarouselSlide'
+import { carouselData } from '../Constants/calouserData';
 import HomeLayout from "../Layouts/HomeLayout"
 
 function AboutUs(){
+
+   
 
     return(
         <HomeLayout>
@@ -28,62 +27,7 @@ function AboutUs(){
                     </div>
                 </div>
                 <div className="carousel w-3/12 h-[250px] my-16 mx-auto border rounded-full">
-                    <div id="slide1" className="carousel-item relative w-full">
-                        <img src={steveJobs} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide5" className="btn btn-circle">❮</a> 
-                            <a href="#slide2" className="btn btn-circle">❯</a>
-                        </div>
-                        <div className='hidden md:block absolute text-center bottom-1 left-6 w-[80%]'>
-                            <p className='text-gray-400'>“The truth will set you free.”</p>
-                            <h3 className='text-white font-bold'>Steve Jobs</h3>
-                        </div>
-                    </div> 
-                    <div id="slide2" className="carousel-item relative w-full">
-                        <img src={apj} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide1" className="btn btn-circle">❮</a> 
-                            <a href="#slide3" className="btn btn-circle">❯</a>
-                        </div>
-                        <div className='hidden md:block absolute text-center bottom-1 left-6 w-[80%]'>
-                            <p className='text-gray-400'>“The truth will set you free.”</p>
-                            <h3 className='text-white font-bold'>Abdul Kalam</h3>
-                        </div>
-                    </div> 
-                    <div id="slide3" className="carousel-item relative w-full">
-                        <img src={billGates} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide2" className="btn btn-circle">❮</a> 
-                            <a href="#slide4" className="btn btn-circle">❯</a>
-                        </div>
-                        <div className='hidden md:block absolute text-center bottom-1 left-6 w-[80%]'>
-                            <p className='text-gray-400'>“The truth will set you free.”</p>
-                            <h3 className='text-white font-bold'>Bill Gates</h3>
-                        </div>
-                    </div> 
-                    <div id="slide4" className="carousel-item relative w-full">
-                        <img src={einstein} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide3" className="btn btn-circle">❮</a> 
-                            <a href="#slide5" className="btn btn-circle">❯</a>
-                        </div>
-                        <div className='hidden md:block absolute text-center bottom-1 left-6 w-[80%]'>
-                            <p className='text-gray-400'>“The truth will set you free.”</p>
-                            <h3 className='text-white font-bold'>Albert Einstein</h3>
-                        </div>
-                    </div>
-                    <div id="slide5" className="carousel-item relative w-full">
-                        <img src={nelsonmandela} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide4" className="btn btn-circle">❮</a> 
-                            
-                            <a href="#slide1" className="btn btn-circle">❯</a>
-                        </div>
-                        <div className='hidden md:block absolute text-center bottom-1 left-6 w-[80%]'>
-                            <p className='text-gray-400'>“It is in your hands, to make a better world for all who live in it.”</p>
-                            <h3 className='text-white font-bold'>Nelson Mandela</h3>
-                        </div>
-                    </div>
+                    {carouselData&&carouselData.map((item)=><CarouselSlide {...item} key={item.slideNum} totalslide={carouselData.length}/>)}
                 </div>
             </div>
         </HomeLayout>
