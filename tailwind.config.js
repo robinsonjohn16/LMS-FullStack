@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const daisyui=require("daisyui");
-export default{
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,5 +7,5 @@ export default{
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/line-clamp"), daisyui:{themes:["dark"]}]
+  plugins: [require("daisyui")],
 }
