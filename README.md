@@ -1,5 +1,5 @@
 # LMS-Frontend
-
+This is a Vite+React project of Learning management system.
 
 ### Setup Instructions
 
