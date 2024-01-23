@@ -3,7 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { BsPersonCircle } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import HomeLayout from "../Layouts/HomeLayout";
 import { createAccount } from "../Redux/Slices/AuthSlice";
@@ -161,6 +161,9 @@ function Signup(){
                      <button type="submit" className="mt-2 bg-yellow-600 rounded-lg font-semibold text-lg py-2 hover:bg-yellow-500 transition-all ease-in-out">
                         Create account
                      </button>
+
+                     <p className="text-center">Do not have account? <Link to="/login" className="text-accent link">Login</Link>
+                     </p>
                      
                 </form>
 
