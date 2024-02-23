@@ -35,12 +35,8 @@ function Signup(){
             return;
         }
 
-        const formData=new FormData();
-        formData.append("email",loginData.email);
-        formData.append("password",loginData.password);
-
         //dispatch create account action
-        const response=await dispatch(login(formData));
+        const response=await dispatch(login(loginData));
         console.log(response)
         if(response?.payload?.success){
              navigate('/');
