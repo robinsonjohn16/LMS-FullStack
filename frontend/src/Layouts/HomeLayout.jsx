@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 
 import Footer from '../Components/Footer';
+import { logout } from "../Redux/Slices/AuthSlice";
 function HomeLayout({ children }){
 
   const dispatch=useDispatch();
@@ -28,11 +29,12 @@ function HomeLayout({ children }){
     drawerSide[0].style.width=0;  
   }
 
-  function handleLogout(e){
+ async function handleLogout(e){
     e.preventDefault()
 
-    // const res=await dispatch(logout());
-    // if(res?.payload?.success)
+    const res=await dispatch(logout());
+    console.log(res)
+    if(res?.payload?.success)
     navigate('/')
   }
  return(
@@ -94,8 +96,8 @@ function HomeLayout({ children }){
                   <button className='btn btn-primary w-1/2 text-white'>
                       <Link to="/user/profile">Profile</Link>
                   </button>
-                  <button className='btn btn-secondary w-1/2 text-white'>
-                      <Link to={handleLogout}>Logout</Link>
+                  <button onClick={handleLogout} className='btn btn-secondary w-1/2 text-white'>
+                      Logout
                   </button>
               </div>
               </li>
