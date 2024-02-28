@@ -39,7 +39,7 @@ function HomeLayout({ children }){
   }
  return(
     <>
-      <div className="min-h-[90vh]" data-theme="dark">
+      <div className="min-h-screen" data-theme="dark">
          {/* Adding of daisyui drawer */}
         <div className="drawer w-fit absolute left-0 z-50">
           <input type="checkbox" id="my-drawer" className="drawer-toggle" />
